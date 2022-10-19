@@ -1,0 +1,39 @@
+body
+{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.problem, #title_label
+{
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #c4c4c4;
+}
+.status-icon
+{
+    flex: 0 0 56px;
+}
+.title, #title
+{
+    flex: 1 0 auto;
+}
+.submit, .ac, .ac-rate, .non-ac, #submit, #ac, #ac_rate, #non_ac
+{
+    flex: 0 0 100px;
+}
+.chart
+{
+    height: 50px;
+    width: 200px;
+}
+
+#title
+{
+    padding-left: 16px;
+}
+#chart_label
+{
+    flex: 0 0 200px;
+}
