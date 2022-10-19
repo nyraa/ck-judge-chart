@@ -1,0 +1,3 @@
+[submodule "NCKUpp"]
+	path = NCKUpp
+	url = git@github.com:WavJaby/NCKUpp.git
