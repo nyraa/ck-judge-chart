@@ -27,7 +27,7 @@ const {
     TextState,
     State,
     ClassList
-} = require('./NCKUpp/domHelper');
+} = require('./NCKUpp/res/domHelper');
 (async function main()
 {
 
