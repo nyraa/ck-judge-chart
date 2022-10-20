@@ -52,7 +52,7 @@ function callAPI(path)
             div(null, {id: "non_ac"},
                 a("!ac")),
             div(null, {id: "chart_label"},
-                a("chart"))
+                a("history"))
     ));
     // TODO get problems
     const problems = await (await callAPI("get_problems")).json();
