@@ -29,6 +29,9 @@ const {
     ClassList,
     any
 } = require('./NCKUpp/res/domHelper');
+const {
+    popupWindow, PopupWindow
+} = require("./popup");
 const apiBase = "https://script.google.com/macros/s/AKfycbzSeli7P5k2ABdRqIWuGtymTfRTsNOrLxNMJSmF2scLArPF_QG1iQpnRUicMdfZ1_r0/exec";
 function callAPI(path)
 {
@@ -38,6 +41,12 @@ function callAPI(path)
 }
 (async function main()
 {
+    // information popup
+    const showPopupWindowSignal = new Signal(true);
+    const popupWindow = PopupWindow(showPopupWindowSignal);
+    document.body.appendChild(ShowIf(showPopupWindowSignal, popupWindow)(document.body));
+
+    
     // TODO create UI
     document.body.appendChild(
         div(null, {id: "title_label"},

@@ -38,6 +38,7 @@ body
     position: sticky;
     top: 0px;
     background-color: var(--main-bg-color);
+    z-index: 10;
 }
 #title
 {
@@ -46,4 +47,21 @@ body
 #chart_label
 {
     flex: 0 0 200px;
+}
+.popup-window-overlay
+{
+    background-color: #0000007f;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+.popup-window
+{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: var(--main-bg-color);
+    top: 25%;
+    left: 25%;
 }
