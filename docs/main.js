@@ -42,11 +42,11 @@ function callAPI(path)
 (async function main()
 {
     // information popup
-    const showPopupWindowSignal = new Signal(true);
+    const showPopupWindowSignal = new Signal(false);
     const popupWindow = PopupWindow(showPopupWindowSignal);
     document.body.appendChild(ShowIf(showPopupWindowSignal, popupWindow)(document.body));
 
-    
+
     // TODO create UI
     document.body.appendChild(
         div(null, {id: "title_label"},
@@ -69,6 +69,7 @@ function callAPI(path)
     for(let problem of problems)
     {
         problem.signal = new Signal(logs[problem.id]);
+        
         document.body.appendChild(
             div("problem-root",
                 new State(problem.signal, (state) =>
