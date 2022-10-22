@@ -1,30 +1,40 @@
-body
-{
-  margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.title-bar
-{
-  display: flex;
-  width: 100%;
-  height: 56px;
-  align-items: center;
-  position: sticky;
-  top: 20px;
-  background-color: white;
+.title-bar {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    background-color: white;
 }
 
-.problem-name-title
-{
-  flex: 1 0 auto;
-  padding-left: 16px;
+.problem-name-title {
+    flex: 1 0 auto;
+    padding-left: 16px;
 }
-.submit-counts-title, .ac-counts-title, .ac-rate-title, .non-ac-counts-title
-{
-  flex: 0 0 100px;
+
+.submit-counts-title,
+.ac-counts-title,
+.ac-rate-title,
+.non-ac-counts-title {
+    flex: 0 0 100px;
 }
-.history-title
-{
-  flex: 0 0 200px;
+
+.history-title {
+    flex: 0 0 200px;
+}
+
+.sorting-mode::after {
+    padding-left: .5em;
+}
+.sorting-mode--0::after, .problem-name-title.sorting-mode--1::after {
+    content: '\25b2';
+}
+.sorting-mode--1::after, .problem-name-title.sorting-mode--0::after {
+    content: '\25bc';
 }
