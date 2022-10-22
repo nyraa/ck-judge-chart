@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://script.google.com/macros/s/AKfycbzSeli7P5k2ABdRqIWuGtymTfRTsNOrLxNMJSmF2scLArPF_QG1iQpnRUicMdfZ1_r0"
+    baseURL: "https://script.google.com/macros/s/AKfycbwCXDPuRgblhbILJRBLh3PyY-bL69OIBOoPK5wpBmPwUT2ss2CGqM78iuHeveH6k7yQ/exec"
 });
 const queryData = async (path, dataSetter, defaultValue) => {
     try {
@@ -14,18 +14,21 @@ const queryData = async (path, dataSetter, defaultValue) => {
         dataSetter(defaultValue);
     }
 };
+const isDataReady = (...dataSets) => {
+    return dataSets.every(data => Object.keys(data).length > 0);
+}
 
 export default function useJudgeData() {
-    const [problems, setProblems] = useState([]);
-    const [homeworkSets, setHomeworkSets] = useState([]);
+    const [problems, setProblems] = useState({});
+    const [homeworkSets, setHomeworkSets] = useState({});
     const [stats, setStats] = useState({});
     useEffect(() => {
-        queryData("get_problems", setProblems, []);
-        queryData("get_homeworks", setHomeworkSets, []);
+        queryData("get_problems", setProblems, {});
+        queryData("get_homeworks", setHomeworkSets, {});
         queryData("get_log", setStats, {});
 
         const interval = setInterval(() => queryData("get_log", setStats, {}), 1000*30);
         return () => clearInterval(interval);
     }, []);
-    return {problems, homeworkSets, stats};
+    return {problems, homeworkSets, stats, ready: isDataReady(problems, homeworkSets, stats)};
 };

@@ -7,7 +7,7 @@ import DataList from "./containers/DataList";
 import useJudgeData from './hooks/useJudgeData';
 
 function App() {
-    const { problems, homeworkSets, stats } = useJudgeData();
+    const { problems, homeworkSets, stats, ready: dataReady } = useJudgeData();
     return (
         <div className="App">
             <Navigator />
@@ -19,7 +19,7 @@ function App() {
                 <div className="non-ac-counts-title">Non-AC</div>
                 <div className="history-title">History</div>
             </div>
-            <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} />
+            <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} />
         </div>
     );
 }
