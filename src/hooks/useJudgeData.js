@@ -14,14 +14,13 @@ const queryData = async (path, dataSetter, defaultValue) => {
         dataSetter(defaultValue);
     }
 };
-const isDataReady = (...dataSets) => {
-    return dataSets.every(data => Object.keys(data).length > 0);
-}
+const isDataReady = (...dataSets) => dataSets.every(data => Object.keys(data).length > 0);
 
 export default function useJudgeData() {
     const [problems, setProblems] = useState({});
     const [homeworkSets, setHomeworkSets] = useState({});
     const [stats, setStats] = useState({});
+    const [ready, setReady] = useState(false);
     useEffect(() => {
         queryData("get_problems", setProblems, {});
         queryData("get_homeworks", setHomeworkSets, {});
@@ -30,5 +29,6 @@ export default function useJudgeData() {
         const interval = setInterval(() => queryData("get_log", setStats, {}), 1000*30);
         return () => clearInterval(interval);
     }, []);
-    return {problems, homeworkSets, stats, ready: isDataReady(problems, homeworkSets, stats)};
+    useEffect(() => setReady(isDataReady(problems, homeworkSets, stats)), [problems, homeworkSets, stats]);
+    return {problems, homeworkSets, stats, ready};
 };
