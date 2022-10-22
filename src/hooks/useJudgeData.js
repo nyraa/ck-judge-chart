@@ -16,11 +16,11 @@ const queryData = async (path, dataSetter, defaultValue) => {
 };
 
 export default function useJudgeData() {
-    const [problems, setProblems] = useState({});
+    const [problems, setProblems] = useState([]);
     const [homeworkSets, setHomeworkSets] = useState([]);
     const [stats, setStats] = useState({});
     useEffect(() => {
-        queryData("get_problems", setProblems, {});
+        queryData("get_problems", setProblems, []);
         queryData("get_homeworks", setHomeworkSets, []);
         queryData("get_log", setStats, {});
 
