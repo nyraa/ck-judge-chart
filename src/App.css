@@ -9,11 +9,16 @@ body
   display: flex;
   width: 100%;
   height: 56px;
+  align-items: center;
+  position: sticky;
+  top: 20px;
+  background-color: white;
 }
 
 .problem-name-title
 {
   flex: 1 0 auto;
+  padding-left: 16px;
 }
 .submit-counts-title, .ac-counts-title, .ac-rate-title, .non-ac-counts-title
 {

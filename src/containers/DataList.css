@@ -1,0 +1,22 @@
+.problem-row
+{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d8d8d8;
+}
+.problem-icon
+{
+    flex: 0 0 56px;
+}
+.problem-name
+{
+    flex: 1 0 auto;
+}
+.submit-counts, .ac-counts, .ac-rate, .non-ac-counts
+{
+    flex: 0 0 100px;
+}
+.history-canvas
+{
+    flex: 0 0 200px;
+}
