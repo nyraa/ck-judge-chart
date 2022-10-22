@@ -22,8 +22,8 @@ function App() {
         else return "sorting-mode";
     }
     const sortingTypes = [
-        () => -1,
         () => 0,
+        () => -1,
         (a, b) => b.submit - a.submit,
         (a, b) => a.submit - b.submit,
         (a, b) => b.ac - a.ac,
