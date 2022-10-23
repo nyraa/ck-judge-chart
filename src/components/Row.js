@@ -7,7 +7,7 @@ export default function Row({title, pId, submit, ac, ac_rate, non_ac}) {
             {title}
             <a href={`https://ckj.imslab.org/#/problems/${pId}`} target="_blank" rel="noreferrer">[*]</a>
         </div>
-        <div className="submit-counte">{submit}</div>
+        <div className="submit-counts">{submit}</div>
         <div className="ac-counts">{ac}</div>
         <div className="ac-rate">{ac_rate}%</div>
         <div className="non-ac-counts">{non_ac}</div>
