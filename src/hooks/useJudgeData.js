@@ -21,14 +21,22 @@ export default function useJudgeData() {
     const [homeworkSets, setHomeworkSets] = useState({});
     const [stats, setStats] = useState({});
     const [ready, setReady] = useState(false);
-    useEffect(() => {
+    const [lastUpdate, setLastUpdate] = useState(undefined);
+    const refresh = () => {
         queryData("get_problems", setProblems, {});
         queryData("get_homeworks", setHomeworkSets, {});
         queryData("get_log", setStats, {});
+    };
+    useEffect(() => {
+        refresh();
 
         const interval = setInterval(() => queryData("get_log", setStats, {}), 1000*30);
         return () => clearInterval(interval);
     }, []);
-    useEffect(() => setReady(isDataReady(problems, homeworkSets, stats)), [problems, homeworkSets, stats]);
-    return {problems, homeworkSets, stats, ready};
+    useEffect(() => {
+        const isReady = isDataReady(problems, homeworkSets, stats);
+        setReady(isReady);
+        if(isReady) setLastUpdate(new Date());
+    }, [problems, homeworkSets, stats]);
+    return {problems, homeworkSets, stats, ready, lastUpdate, refresh};
 };
