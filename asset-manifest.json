@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ck-judge-dashboard/static/css/main.b4236dd5.css",
-    "main.js": "/ck-judge-dashboard/static/js/main.75c21c3f.js",
+    "main.js": "/ck-judge-dashboard/static/js/main.17c94cde.js",
     "static/js/787.d37de791.chunk.js": "/ck-judge-dashboard/static/js/787.d37de791.chunk.js",
     "index.html": "/ck-judge-dashboard/index.html",
     "main.b4236dd5.css.map": "/ck-judge-dashboard/static/css/main.b4236dd5.css.map",
-    "main.75c21c3f.js.map": "/ck-judge-dashboard/static/js/main.75c21c3f.js.map",
+    "main.17c94cde.js.map": "/ck-judge-dashboard/static/js/main.17c94cde.js.map",
     "787.d37de791.chunk.js.map": "/ck-judge-dashboard/static/js/787.d37de791.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b4236dd5.css",
-    "static/js/main.75c21c3f.js"
+    "static/js/main.17c94cde.js"
   ]
 }
