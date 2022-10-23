@@ -22,3 +22,11 @@
 .history-canvas {
     flex: 0 0 200px;
 }
+
+.problem-name > a {
+    padding-left: .5em;
+}
+
+.loading-message {
+    padding: 16px;
+}
