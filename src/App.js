@@ -8,7 +8,7 @@ import DataList from "./containers/DataList";
 import useJudgeData from './hooks/useJudgeData';
 
 function App() {
-    const { problems, homeworkSets, stats, ready: dataReady } = useJudgeData();
+    const { problems, homeworkSets, stats, ready: dataReady, lastUpdate} = useJudgeData();
     const [sortingMode, setSortingMode] = useState(0);
     const sortingTypeEvent = baseId => {
         return () => {
@@ -35,7 +35,7 @@ function App() {
     ];
     return (
         <div className="App">
-            <Navigator />
+            <Navigator arg_lastUpdate={lastUpdate} />
             <div className="title-bar">
                 <div className={`problem-name-title ${sortingTypeIndicator(0)}`} onClick={sortingTypeEvent(0)}>Problems</div>
                 <div className={`submit-counts-title ${sortingTypeIndicator(2)}`} onClick={sortingTypeEvent(2)}>Submit</div>
