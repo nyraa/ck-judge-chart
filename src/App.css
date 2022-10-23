@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Consolas', 'Courier New', 'Courier', monospace;
 }
 
 .title-bar {
@@ -27,6 +27,11 @@ body {
 
 .history-title {
     flex: 0 0 200px;
+}
+
+.sorting-mode
+{
+    cursor: pointer;
 }
 
 .sorting-mode::after {
