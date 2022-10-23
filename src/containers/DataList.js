@@ -22,6 +22,7 @@ function DataList({arg_problems, arg_stats, arg_homeworkSets, arg_dataReady, arg
     row_data.sort(arg_sortingFunc);
     return (<div className="data-list-root">
         {row_data.map(data => <Row
+            key={data.id}
             title={data.title}
             pId={data.id}
             submit={data.submit}
