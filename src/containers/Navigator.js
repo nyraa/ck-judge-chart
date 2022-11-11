@@ -5,7 +5,7 @@ function Navigator({arg_lastUpdate}) {
         <nav className="nav-bar">
             <span>
                 {arg_lastUpdate
-                ? <>Last update: {arg_lastUpdate.toLocaleString()}</>
+                ? <>Last refresh: {arg_lastUpdate.toLocaleString()}</>
                 : "Loading"}
             </span>
         </nav>
