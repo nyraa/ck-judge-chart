@@ -7,9 +7,12 @@ import DataList from "./containers/DataList";
 
 import useJudgeData from './hooks/useJudgeData';
 
+import InfoDailog from "./components/InfoDialog.js";
+
 function App() {
-    const { problems, homeworkSets, stats, ready: dataReady, lastUpdate} = useJudgeData();
+    const {problems, homeworkSets, stats, ready: dataReady, lastUpdate} = useJudgeData();
     const [sortingMode, setSortingMode] = useState(0);
+    const [infoShowing, setInfoShowing] = useState(null);
     const sortingTypeEvent = baseId => {
         return () => {
             if(sortingMode === baseId) setSortingMode(baseId + 1);
@@ -45,6 +48,7 @@ function App() {
                 <div className="history-title">History</div>
             </div>
             <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} arg_sortingFunc={sortingTypes[sortingMode]} />
+            <InfoDailog arg_infoShowing={infoShowing} arg_setInfoShowing={setInfoShowing} />
         </div>
     );
 }
