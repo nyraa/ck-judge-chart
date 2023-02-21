@@ -34,7 +34,9 @@ function App() {
         (a, b) => b.ac_rate - a.ac_rate,
         (a, b) => a.ac_rate - b.ac_rate,
         (a, b) => b.non_ac - a.non_ac,
-        (a, b) => a.non_ac - b.non_ac
+        (a, b) => a.non_ac - b.non_ac,
+        (a, b) => b.last_updated - a.last_updated,
+        (a, b) => a.last_updated - b.last_updated,
     ];
     return (
         <div className="App">
@@ -46,6 +48,7 @@ function App() {
                 <div className={`ac-counts-title ${sortingTypeIndicator(4)}`} onClick={sortingTypeEvent(4)}>AC</div>
                 <div className={`ac-rate-title ${sortingTypeIndicator(6)}`} onClick={sortingTypeEvent(6)}>AC Rate</div>
                 <div className={`non-ac-counts-title ${sortingTypeIndicator(8)}`} onClick={sortingTypeEvent(8)}>Non-AC</div>
+                <div className={`last-updated-title ${sortingTypeIndicator(10)}`} onClick={sortingTypeEvent(10)}>last updated</div>
                 <div className="history-title">History</div>
             </div>
             <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} arg_sortingFunc={sortingTypes[sortingMode]} arg_setInfoShowing={setInfoShowing} />

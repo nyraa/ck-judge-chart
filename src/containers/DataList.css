@@ -23,6 +23,10 @@
     flex: 0 0 200px;
 }
 
+.last-updated {
+    flex: 0 0 200px;
+}
+
 .problem-name > a {
     padding-left: .5em;
 }
