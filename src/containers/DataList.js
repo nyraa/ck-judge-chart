@@ -1,7 +1,7 @@
 import "./DataList.css";
 import Row from "../components/Row";
 
-function DataList({arg_problems, arg_stats, arg_homeworkSets, arg_dataReady, arg_sortingFunc})
+function DataList({arg_problems, arg_stats, arg_homeworkSets, arg_dataReady, arg_sortingFunc, arg_setInfoShowing})
 {
     if(!arg_dataReady)
     {
@@ -29,6 +29,7 @@ function DataList({arg_problems, arg_stats, arg_homeworkSets, arg_dataReady, arg
             ac={data.ac}
             ac_rate={data.ac_rate}
             non_ac={data.non_ac}
+            setInfoShowing={arg_setInfoShowing}
         />)}
     </div>);
 }

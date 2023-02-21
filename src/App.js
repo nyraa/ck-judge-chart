@@ -38,6 +38,7 @@ function App() {
     ];
     return (
         <div className="App">
+            <InfoDailog arg_infoShowing={infoShowing} arg_setInfoShowing={setInfoShowing} arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} />
             <Navigator arg_lastUpdate={lastUpdate} />
             <div className="title-bar">
                 <div className={`problem-name-title ${sortingTypeIndicator(0)}`} onClick={sortingTypeEvent(0)}>Problems</div>
@@ -47,8 +48,7 @@ function App() {
                 <div className={`non-ac-counts-title ${sortingTypeIndicator(8)}`} onClick={sortingTypeEvent(8)}>Non-AC</div>
                 <div className="history-title">History</div>
             </div>
-            <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} arg_sortingFunc={sortingTypes[sortingMode]} />
-            <InfoDailog arg_infoShowing={infoShowing} arg_setInfoShowing={setInfoShowing} />
+            <DataList arg_problems={problems} arg_homeworkSets={homeworkSets} arg_stats={stats} arg_dataReady={dataReady} arg_sortingFunc={sortingTypes[sortingMode]} arg_setInfoShowing={setInfoShowing} />
         </div>
     );
 }

@@ -1,10 +1,10 @@
 import History from "./History";
 
-export default function Row({title, pId, submit, ac, ac_rate, non_ac}) {
+export default function Row({title, pId, submit, ac, ac_rate, non_ac, setInfoShowing}) {
     return <div className="problem-row">
         <div className="problem-icon"></div>
         <div className="problem-name">
-            {title}
+            <a onClick={(() => setInfoShowing(pId))}>{title}</a>
             <a href={`https://ckj.imslab.org/#/problems/${pId}`} target="_blank" rel="noreferrer">[*]</a>
         </div>
         <div className="submit-counts">{submit}</div>
